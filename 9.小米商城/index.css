@@ -1,0 +1,541 @@
+/* 设置顶部导航栏样式 */
+.topbar-warpper{
+    background-color: #333;
+    color: #b0b0b0;
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+}
+
+/* 设置导航栏内部容器样式 */
+.topbar{
+    width: 1226px;
+    margin: auto;   
+}
+/* 设置超链接样式 */
+.topbar a:hover{
+    color: #fff;
+}
+/* 设置导航栏内容排版 */
+.topbar .service{
+    float: left;
+}
+.topbar .shop-cart{
+    float: right;
+}
+.topbar .user-info{
+    float: right;
+}
+/* 设置导航栏左侧内容布局 */
+.service li{
+    float: left;
+    
+}
+/* 设置导航栏右侧布局 */
+.user-info li{
+    float: left;
+}
+/* 设置line边距 */
+.topbar .line{
+    margin: 0px 7px;
+    color: #424242;
+}
+/* 设置购物车样式 */
+.shop-cart{
+    background-color: #424242;
+    text-align: center;
+    margin-left: 20px;
+    position: relative;
+    z-index: 20;
+}
+/* 设置a为块元素 */
+.shop-cart a{
+    width: 120px;
+    height: 40px;
+    display: block;
+}
+/* 设置鼠标悬停在购物车外部容器时内容的样式 */
+.shop-cart:hover a{
+    color: #ff6700;
+    background-color: #fff;
+}
+/* 购物车展开内容的样式 */
+.cart-wapper{
+    width:300px;
+    height: 0px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 5, 3, 0.3);
+    position: absolute;
+    overflow: hidden;
+    right: 0px;
+    transition: 0.5s;
+}
+.shop-cart:hover .cart-wapper{
+    height: 100px;
+}
+/* 给li（下载app）开启相对定位，为了使其成为app-scode定位的外部容器 */
+.app{
+    position: relative;
+}
+/* 给下载app一栏后边设置小三角 */
+.app::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 13px;
+    width: 0px;
+    height: 0px;
+    border: 8px solid blue;
+    border-top: none;
+    border-color: transparent transparent white transparent;
+    display: none;
+}
+/* 鼠标悬停显示下三角 */
+.app:hover::after{
+    display: block;
+}
+/* 设置app下拉样式 */
+.app .app-scode{
+    position: absolute;
+    left: -40px;
+    width: 124px;
+    height: 0px;
+    line-height: 1px;
+    box-shadow: 0px 0px 10px rgba(0, 5, 3, 0.3);
+    text-align: center;
+    
+    background-color: #fff;
+    z-index: 55;
+    color: black;
+    transition: 0.5s;
+    overflow: hidden;
+}
+.app:hover .app-scode{
+    height: 138px;
+}
+/* 设置图片外容器的位置 */
+ .app-scode .app-img{
+    width: 90px;
+    height: 90px;
+    margin: 17px;
+    line-height: 1px;
+}
+/* 设置下拉二维码的字体样式 */
+.app-scode span{
+    font-size: 15px;
+    line-height: 1px;
+    
+}
+
+/* 头部导航栏 */
+.hearder{
+    width: 100%;
+    height: 100px;
+    position: relative;
+   
+}
+.hearder-warpper{
+    /* background-color: #ff6700; */
+    width: 1226px;
+    height: 100px;
+    /* background-color: seashell; */
+    margin: 0px auto;
+    /* position: relative; */
+}   
+/* 设置logo容器样式 */
+.logo{
+    /* margin-top: 0px; */
+    /* display: block; */
+    width: 56px;
+    height: 56px;
+    /* line-height: 1px; */
+    /* border-radius: 30px; */
+    border-radius: 30%;
+    float: left;
+}
+.logo a{
+    display: block;
+    width: 56px;
+    height: 56px;
+    border-radius: 20px;
+    /* background-color: #ff6700; */
+    background-image: url(../image/logo-mi2.png) ;
+    background-repeat: no-repeat;
+    background-size: 56px;
+}
+/* 设置商品分类列表 */
+.hearder-list{
+    float: left;
+    height: 88px;
+    width: 800px;
+    /* background-color: aquamarine; */
+    padding-top: 12px;
+    padding-left: 30px;
+    /* position: relative; */
+}
+.hearder-list .all-goods{
+    position: relative;
+}
+.hearder-list li{
+    display: block;
+    height: 90px;
+    float: left;
+    font-size: 16px;
+    line-height: 90px;
+    /* padding-top: 25px; */
+    
+    /* border: 1px solid red; */
+}
+.hearder-list a{
+    color: #333;
+    padding: 10px;
+    
+}
+.hearder-list a:hover{
+    color: #ff6700;
+}
+.hearder .all-goods{
+    display: block;
+    margin-left: 29px;
+
+}
+
+/* 设置Xiaomi手机下拉样式 */
+
+.xiaomi .xiaomi-bottom-warpper{
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 100px;
+    /* top: 0px; */
+    line-height: 0px;
+    box-shadow: 0px 5px 10px rgba(46, 41, 41, 0.3);
+    height: 0px;
+    overflow: hidden;
+    transition:height 1s ;
+    z-index: 9999999;
+    background-color: #fff;
+    /* border: 1px solid red; */
+}
+.xiaomi .xiaomi-bottom-warpper{
+    position:absolute;
+    
+    z-index: 100;
+}
+/* 当鼠标悬停在xiaomi这一整个li标签时高度为220px */
+.xiaomi:hover .xiaomi-bottom-warpper{
+    height: 220px;
+    
+    
+}
+/* 设置xiaomi下拉商品内容器样式 */
+
+.xiaomi-list{
+    width: 1226px;
+    margin: 0px auto;
+    
+    
+    
+
+    
+}
+/* 设置每个图片列表外容器li位置 */
+.xiaomi-bottom-warpper li{
+    /* display: block; */
+    float: left;
+    width: 200px;
+    height: 220px;
+    /* padding-top:30px; */
+    
+    
+    text-align: center;
+}
+/* 设置商品分割线 */
+.xiaomi-list .line{
+    height: 90px;
+    width: 1px;
+    background-color: rgb(204, 203, 203);
+    margin-top: 30px;
+}
+/* 设置图片位置 */
+.xiaomi-list img{
+    /* display: block; */
+    /* margin: 50px auto; */
+    padding-top: 30px;
+    
+}
+/* 设置商品名称样式 */
+.xiaomi-list span{
+    height: 14px;
+    line-height: 14px;
+    display: block;
+    font-size: 12px;
+    /* border: 1px solid red; */
+    /* padding-bottom: 10px; */
+    padding-top: 0px;
+    margin-top: -20px;
+}
+/* 单独设置价格标签颜色 */
+.xiaomi-list .value{
+    color: #ff6700;
+    margin-top: 7px;
+}
+/* 设置右侧搜索框 */
+
+.search-warpper .search-form{
+    float: right;
+    /* display: block; */
+    width: 296px;
+    height: 50px;
+    /* background-color: aqua; */
+    margin-top: 25px;
+}
+.search-form .inp{
+    float: left;
+    width: 223px;
+    height: 48px;
+    
+    padding: 0px 10px;
+    border: 1px solid #e0e0e0;
+    outline: none;
+    /* outline:1px solid #ff6700; */
+    font-size: 24px;
+}
+
+.search-form .btn{
+    float: left;
+    width: 51px;
+    height: 50px;
+    border:1px solid #e0e0e0 ;
+    border-left: none;
+    background-color: #fff; 
+}
+.search-form .btn:hover{
+    background-color: #ff6700;
+}
+.search-form .btn i{
+    font-size: 18px;
+    color: #616161;
+}
+.search-form .btn:hover i{
+    color: #fff;
+}
+/* 设置商品下隐藏层 */
+.goods-hidden{
+    width: 234px;
+    height: 460px;
+    position: absolute;
+    top: 89px;
+    left: -115px;
+    /* clear: both; */
+    /* float: left; */
+    z-index: 99;
+}
+.goods-hidden-list{
+    width: 234px;
+    height: 420px;
+    padding: 20px 0px;
+    color: #fff;
+    background: rgba(105,101,101,.6);
+    margin: 0px;
+}
+.goods-hidden-list li{
+    display: block;
+    width: 234px;
+    height: 42px;
+    line-height: 42px;
+    padding: 0px;
+    margin: 0px;
+    /* box-sizing: border-box; */
+}
+.goods-hidden-list li a{
+    /* position: relative; */
+    /* float: left; */
+    display: block;
+    width: 173px;
+    height: 42px;
+    line-height: 42px;
+    padding: 0px 30px;
+    margin: 0px;
+    font-size: 14px;
+    color: #fff;
+    /* padding-left: 30px; */
+}
+.goods-hidden-list li i{
+    float: right;
+    line-height: 42px;
+    font-size: 16px;
+}
+.goods-hidden-list li a:hover{
+    background-color: #ff6700;
+    color: #fff;
+}
+/* 设置中间广告位 */
+.banner-warpper{
+    width: 1226px;
+    height: 460px;
+    position: relative;
+    margin: 0px auto;
+    /* background-color: red; */
+}
+.banner{
+    
+    
+    position: relative;
+    margin: 0px auto;
+}
+.banner-img-list{
+    position: relative;
+    display: block;
+
+}
+.banner li{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.banner img{
+    width: 100%;
+    vertical-align: top;
+}
+.pointer{
+    width:400px ;
+    height: 21px;
+    /* background-color: #ff6700; */
+    position: absolute;
+    top: 400px;
+    left: 800px;
+}
+.pointer li{
+    float: right;
+    
+}
+.pointer li a{
+    display: block;
+    width: 6px;
+    height: 6px;
+    /* background-color:#00000066; */
+    background: rgba(0,0,0,.4);
+    margin-left: 5px;
+    margin-top: 5px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    border-color: hsla(0,0%,100%,.3);
+}
+.pointer li:hover a{
+    background-color: hsla(0,0%,100%,.4);
+}
+/* 设置轮播图切图按钮 */
+/* 设置两按钮大小以及背景图片 */
+.prev,.next{
+    background: url(../image/icon-slides.png);
+   width: 41px;
+   height: 69px;
+   /* background-color: red; */
+}
+.prev{
+    /* 定位图片位置 */
+    background-position:80px 0px;
+    position: absolute;
+    top: 190px;
+    left: 235px;
+}
+.next{
+    /* 定位图片位置 */
+    background-position:40px;
+    position: absolute;
+    top: 190px;
+    right: 0px;
+}
+/* 鼠标放在箭头按钮上切换图片定位位置 */
+.prev:hover{
+    background-position: 0px;
+}
+.next:hover{
+    background-position: 120px;
+}
+/* 设置轮播图下面的图片列表 */
+.ads-list{
+    /* position: relative; */
+    
+    margin-top: 20px;
+    overflow: hidden;
+    
+}
+
+/* 设置左边广告列表 */
+.left-ads{
+    width: 234px;
+    /* background-color: red; */
+    float: left
+}
+.left-ads:hover a{
+    color: #fff;
+}
+
+.left-ads ul{
+    overflow: hidden;
+    display: block;
+    list-style-type: none;
+    font-size: 12px;
+    text-align: center;
+    background-color: #5f5750;
+    margin: 0px;
+    padding: 0px;
+    
+}
+.left-ads ul li{
+    width: 70px;
+    height: 82px;
+    float: left;
+    
+    /* background-color: red; */
+    padding: 1px 4px;
+    
+}
+.left-ads a{
+    display: block;
+    width: 70px;
+    height: 46px;
+    
+    /* color: #665e57; */
+    transition: 0.5s;
+}
+.left-ads img{
+    margin-left: 25px;
+    margin-top: 20px;
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin-bottom: 3px;
+}
+/* 设置右边广告 */
+.right-ads{
+    float: left;
+}
+.right-ads li{
+    float: left;
+    width: 316px;
+    height: 170px;
+     margin-left: 14px;
+    
+}
+.right-ads a{
+    display: block;
+    width: 316px;
+    height: 170px
+}
+.right-ads img{
+    width: 100%;
+}
+/* 设置右侧工具条 */
+.back-top{
+    width: 50px;
+    height: 150px;
+    background-color: #ff6700;
+    position: fixed;
+    top: 700px;
+    right: 50%;
+    margin-right: -660px;
+}

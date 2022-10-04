@@ -1,0 +1,32 @@
+/* 设置clearfix */
+.clearfix::before,
+.clearfix::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+/* 设置整个网页的字体样式 */
+body{
+    font: 14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+    color: #333;
+}
+/* 设置整个网页的重置 */
+body{
+    min-width: 1226px;
+    margin: 0px;
+    padding: 0px;
+}
+/* 设置标签默认属性重置 */
+ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+a{
+    text-decoration: none;
+    color: #b0b0b0;
+}
+.w{
+    width: 1226px;
+    margin: 0px auto;
+}
