@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>留不住</title>
+    <!--    引入图标字体库-->
+    <link rel="stylesheet" href="../新建文件夹/css/all.css">
+    <link rel="stylesheet" href="index.css" >
+    <script src="../jquery-3.6.1.js"></script>
+</head>
+<body>
+<!--                   编写导航栏      -->
+<div class="NavBox">
+    <div class="NavTop ">
+        <div class="TopOutside">
+            <ul class="clearfix">
+                <li><a href="#">我的音乐</a></li>
+                <li><a href="#">发现音乐</a></li>
+                <li><a href="#">喜欢</a></li>
+                <li><a href="#">排行榜</a></li>
+                <li><a href="test1.html">玩会小游戏</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--              导航栏编写结束-->
+
+<!--    创建歌曲图片容器-->
+<div class="bg-bar" id="bit" style="background-size: cover; background-position:center; background-image: url(../ready/bg-bar1.jpg) ">
+    <div class="btn" id="prev"></div>
+    <div class="bg">
+        <a href="#"><img  id="it" src="../ready/bg1.jpg" alt="歌手"></a>
+    </div>
+    <div class="btn" id="next"></div>
+</div>
+<!--     歌曲图片容器结束-->
+
+
+<!--             设置歌曲选择页面-->
+<div class="music-bar">
+    <div class="music-top" >
+
+    </div>
+
+        <div class="music-container">
+            <ul  id="music-list" class="clearfix">
+                <li><a href="#"><img src="../ready/1.jinkesiwebp" alt="金克丝"  title="金克丝" ></a></li>
+                <li><a href="javascript:"><img src="../ready/4.劫.webp" alt="劫" title="劫"></a></li>
+                <li><a href="javascript:"><img src="../ready/2.刀妹.webp" alt="刀妹" title="刀妹"></a></li>
+                <li><a href="javascript:"><img src="../ready/3.提莫.webp" alt="提莫" title="提莫"></a></li>
+                <li><a href="javascript:"><img src="../ready/5.狐狸.webp" alt="狐狸" title="狐狸"></a></li>
+                <li><a href="javascript:"><img src="../ready/6.瑞雯webp.webp" alt="瑞雯" title="瑞雯"></a></li>
+                <li><a href="javascript:"><img src="../ready/7.亚索webp.webp" alt="亚索" title="亚索"></a></li>
+                <li><a href="javascript:"><img src="../ready/8.凯隐webp.webp" alt="凯隐" title="凯隐"></a></li>
+
+            </ul>
+        </div>
+
+</div>
+<!--             歌曲选择页面编写结束-->
+
+
+<!--    设置播放器-->
+
+<div class="bottom-bar">
+<!--    <i class="fa-regular fa-square-right"></i>-->
+<!--    添加播放器属性，并且属性设置为显示按钮-->
+    <audio  controls="controls">
+<!--        添加音频文件-->
+        <source id="source" src="../ready/亚索.mp3" type="audio/mp3"/>
+
+    </audio>
+</div>
+<script>
+    <!--   获取播放器-->
+    let bottomBar=$(".bottom-bar")
+    bottomBar.mouseenter(function (){
+        // 当移入时播放器高度出现
+            $(this).css({"height":"50px"})
+        }
+    )
+    bottomBar.mouseleave(function (){
+        // 移出时高度变为最小的4px
+        $(this).css({"height":"4px"})
+    })
+//    创建一个定时器让歌曲图片自动循环切换
+//     创建一个索引，图片的下标
+//    此索引是歌曲图片容器里面的
+    let index=0
+    let timer=setInterval(function (){
+        index++
+        if (index>=4){
+            index=0
+        }
+        $("#it").attr("src",arr[index]);
+        $("#bit").css("backgroundImage",arr[index+4]);
+    },3000)
+
+//    创建一个数组封装背景和图片地址
+    let arr=["../ready/bg1.jpg","../ready/bg2.jpg","../ready/bg3.jpg","../ready/bg4.jpg","url(../ready/bg-bar1.jpg)","url(../ready/bg-bar2.jpg)","url(../ready/bg-bar3.jpg)","url(../ready/bg-bar4.jpg)"]
+
+    $("#prev").click(function (){
+    // 当点击上按钮时index自减，因为下面规定当index>=数组长度时，index清零
+        index--
+    // 所以这里要写一个判断防止index变为负数
+        if (index<0){
+            //如果index为负数时重置index的值为数组长度-5也就是图片的最大索引数量
+            index=arr.length-5
+        }
+        // 改变图片列表的路径，从而达到更换图片的需求
+        $("#it").attr("src",arr[index])
+        //同时改变背景图片，目前暂未解决
+        $("#bit").css("backgroundImage",arr[index+4]);
+        // 返回i的最后值，防止i自动初始值
+        return index
+
+    })
+
+    // 当点击下按钮时
+    $("#next").click(function (){
+        // index自增
+        index++
+    // 防止用户点击到第四张图片时，又点击了下一张
+        if (index>=arr.length-4){
+            // 当图片索引到达最大值时重置索引值为0也就是第一张
+            index=0
+        }
+        // 修改图片列表的路径
+        $("#it").attr("src",arr[index])
+        // 暂未解决背景
+        $("#bit").css("backgroundImage",arr[index+4]);
+        // 仍然返回index
+          return index
+
+    })
+//    设置点击歌单切换背景图片
+//     将所有的背景图片路径封装到这个数组中
+    let newArr=["url(../ready/金克斯.jpg)","url(../ready/劫.jpg)","url(../ready/刀妹.jpg)","url(../ready/提莫.jpg)","url(../ready/狐狸.jpg)","url(../ready/瑞雯.jpg)","url(../ready/亚索.jpg)","url(../ready/永恩.jpg)"]
+    // 将所有的音乐路径放到新数组中
+    let musicArr=["../ready/亚索.mp3","../ready/提莫.mp3"]
+    //     使用jq获取ul并且命名为ul
+    let ul=$("#music-list");
+    // 将所有ul的img封装到AllImg中
+    let AllImg=$("ul img");
+    // 写一个循环为每个img贴上标签
+
+    for ( let i=0;i<AllImg.length;i++){
+        // 给每个图片添加newIndex属性
+        // AllImg[i].newIndex=i
+        AllImg[i].onclick=function (){
+
+            $(".music-bar").css("backgroundImage",newArr[i])
+
+
+        }
+
+    }
+
+
+
+</script>
+</body>
+</html>

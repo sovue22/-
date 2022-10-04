@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--    引入图标字体库-->
+    <link rel="stylesheet" href="../新建文件夹/css/all.css">
+
+    <script src="../jquery-3.6.1.js"></script>
+    <style>
+        body{
+            height: 100vh;
+        }
+        #bg-bar{
+            width: 100%;
+            /*background-image: url("../ready/bg-bar3.jpg");*/
+            height: 1000px;
+        }
+        .box1{
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            top: 300px;
+            left: 100px;
+        }
+        #list li{
+            width: 150px;
+            height: 100px;
+            float: left;
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="bg-bar">
+    <div class="box1">
+        <ul id="list">
+            <li><img src="../ready/bg1.jpg" width="100%" alt="ms"></li>
+            <li><img src="../ready/bg2.jpg" width="100%" alt="ms"></li>
+            <li><img src="../ready/bg3.jpg" width="100%" alt="ms"></li>
+            <li><img src="../ready/bg4.jpg" width="100%" alt="ms"></li>
+
+        </ul>
+    </div>
+    </div>
+<script>
+
+    // 把背景图片的路径封装到数组中
+    let arr=["url(../ready/bg-bar1.jpg)","url(../ready/bg-bar2.jpg)","url(../ready/bg-bar3.jpg)","url(../ready/bg-bar4.jpg)"]
+    let ul=$("#list");
+    let AllImg=$("ul img");
+    for ( let i=0;i<AllImg.length;i++){
+        // AllImg[i].index=i
+        AllImg[i].onclick=function (){
+
+            $("#bg-bar").css("backgroundImage",arr[i])
+        }
+        console.log(AllImg[i])
+    }
+
+</script>
+</body>
+</html>

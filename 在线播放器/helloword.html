@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="../jquery-3.6.1.js"></script>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    .box1{
+      width: 100%;
+      height: 400px;
+      /*border: 1px solid red;*/
+      margin: 100px 0;
+        /*直接给父元素修改字体大小利用冒泡使新元素也享受次样式*/
+        font-size: 80px;
+    }
+    .box1 ul{
+      margin-left: 300px;
+      list-style-type: none;
+    }
+    .box1 li {
+        width: 100%;
+        height: 80px;
+        /*overflow: hidden;*/
+        /*border: 1px solid blue;*/
+        float: left;
+
+    }
+  </style>
+</head>
+<body>
+      <div class="box1">
+        <ul>
+          <li id="h"></li>
+
+        </ul>
+      </div>
+    <script>
+
+        let li=$("#h")
+      $(document).keydown(function (event){
+        let key=event.key
+        switch (key){
+            case"h":
+              // alert("h")
+               li.append("H")
+                break;
+            case "l":
+                li.append("l")
+                break;
+            case "o":
+                li.append("o")
+                break;
+            case "d":
+                li.append("d")
+                break;
+            case "r":
+                li.append("r")
+                break;
+            case "e":
+                li.append("e")
+                break;
+            case "w":
+                li.append("W")
+            }
+
+        })
+
+    </script>
+</body>
+</html>

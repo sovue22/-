@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--    引入图标字体库-->
+    <link rel="stylesheet" href="../新建文件夹/css/all.css">
+
+    <script src="../jquery-3.6.1.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            height: 100vh;
+        }
+        .arena{
+            position: absolute;
+
+            width: 1000px;
+            height: 99vh;
+            border: 1px solid black;
+            /*margin: 0 auto;*/
+            /*盒子布局*/
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            box-sizing: border-box;
+            left: 300px;
+
+        }
+        #hero{
+            position: absolute;
+
+            bottom: 0;
+            width: 100px;
+            height: 100px;
+            background: red;
+
+        }
+    </style>
+</head>
+
+<body>
+<!--写一个竞技场-->
+    <div class="arena">
+<!--写一个障碍物-->
+        <div class="obstacles">
+            
+        </div>
+<!--写一个英雄-->
+        <div class="hero" id="hero"></div>
+
+    </div>
+    <script>
+        let dir=0
+
+        // 创建一个计时器来单独解决速度
+        setInterval(function (){
+            //避免多次使用jq获取hero
+            let hero=$("#hero")
+
+            //获取边界与浏览器的距离
+
+            // 将hero与父元的left，top转换成数字
+            let left=parseInt(hero.css("left"))
+            let top=parseInt(hero.css("top"))
+            // 获取移动之后bottom的值
+            let bm=parseInt(hero.css("bottom"))
+            //获取移动之后right的值
+            let right=parseInt(hero.css("right"))
+            // 从外面传一个dir的值来表示方向这个计时器只处理速度不处理方向
+
+            //a:65 s:83 d:68 w:87
+            switch (dir) {
+                case "a":
+                    if (left>=0){
+                        //如果用户按下a则元素向左移动10px
+                        hero.css("left" ,left-10 + "px");
+                    }
+
+                    break;
+                case "w":
+                    if (top>=0){
+                        hero.css("bottom",bm+10+"px")
+                    }
+                    break;
+                case "s":
+                    if (bm>0){
+                        hero.css("bottom",bm-10+"px")
+                    }
+                    break;
+                case "d":
+                    if (right>=0){
+                        hero.css("left",left+10+"px")
+                    }
+                    break;
+            }
+        },20)
+<!--为document绑定一个按键按下的事件-->
+    document.onkeydown=function(event) {
+        // event = event || window.event;
+        //    判断按下哪个按键
+        // alert(event.key)
+       // 获取元素的左边距
+       //  alert($("#hero").offset().left)
+        dir=event.key
+    };
+    //当按键松开时，div不再移动
+    document.onkeyup=function (){
+        dir=0
+    };
+    </script>
+</body>
+</html>

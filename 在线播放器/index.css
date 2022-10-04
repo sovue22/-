@@ -1,0 +1,156 @@
+/*页面初始化*/
+*{
+    padding: 0;
+    margin: 0;
+
+}
+/*设置网页颜色和高度*/
+body{
+    background: #9b8181;
+    height: 100vh;
+}
+                        /*    设置 导 航 栏 样  式   */
+.NavBox{
+    width: 100%;
+    /*盒子模型，此时盒子的宽度就包括了内外边距*/
+    box-sizing: border-box;
+    /*border: 1px solid red;*/
+    /*box-sizing: border-box;*/
+
+}
+/*清除li浮动对父元素的影响*/
+.clearfix::after,.clearfix::before{
+    content: ' ';
+    display: table;
+
+}
+.clearfix::after{
+    clear: both;
+}
+.NavTop{
+    background: #231c1c;
+    /*position: absolute;*/
+    width: 100%;
+}
+.TopOutside{
+    width: 80%;
+    text-align: center;
+    /*border: 1px solid blue;*/
+    margin: 0 auto;
+}
+.NavBox ul{
+    list-style-type: none;
+}
+.TopOutside ul li{
+    float: left;
+    margin: 0 1px;
+
+}
+.TopOutside   a{
+    text-decoration: none;
+    display: block;
+    padding: 15px;
+    color: #c9bcbc;
+
+}
+.TopOutside a:hover{
+    background: #342d2d;
+    color: #fff;
+}
+                /*导 航 栏 样 式 设 置 结 束 */
+
+                    /*设 置 广 告 栏 图 片 轮 播 图*/
+.bg-bar{
+    width: 100%;
+    height: 285px;
+}
+.bg{
+    width: 70%;
+    height: 285px;
+    text-align: center;
+    margin: 0 auto;
+    /*background-image: url("../ready/bg1.jpg");*/
+}
+.btn{
+    width: 50px;
+    height: 70px;
+    position: absolute;
+    background: blue;
+    top: 150px;
+}
+#prev{
+    left: 300px;
+    margin: 0 auto;
+}
+#next{
+    right: 300px;
+    margin: 0 auto;
+}
+.bg img{
+    width: 70%;
+    height: 285px;
+    transition: all 2s;
+}
+.music-bar{
+    width: 100%;
+    background-image: url("../ready/金克斯.jpg")  ;
+    background-size: cover;
+    height: 600px;
+}
+.music-top{
+    width: 49%;
+    height: 50px;
+    background: #fff2e8;
+    margin: 0 auto;
+}
+.music-container{
+    width: 49%;
+    margin: 0 auto;
+    /*border: 1px solid red;*/
+    height: 550px;
+}
+.music-container ul{
+    list-style-type: none;
+    margin-left: -10px;
+}
+.music-container ul li{
+    background: #0f0f0f;
+    width: 140px;
+    height: 260px;
+    float: left;
+    margin:10px 0px 10px 42px
+}
+#music-list img{
+    /*display: block;*/
+    width: 100%;
+    /*height: 100%;*/
+
+}
+.bottom-bar {
+    position: fixed;
+    width: 100%;
+    height: 4px;
+    background: #9b8181;
+    bottom: 0;
+    border: 1px solid black;
+    box-sizing: border-box;
+    box-shadow: 0 0 15px 5px #333333 ;
+    /* 给播放器添加过度效果*/
+    transition: all 2s;
+}
+i{
+    width: 50px;
+    height: 50px;
+    /*background: red;*/
+    color: #0f0f0f;
+}
+audio{
+    position: absolute;
+    top:0;
+    left: 200px;
+    display: block;
+    width: 800px;
+    height: 50px;
+
+    margin: 0 auto;
+}
