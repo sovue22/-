@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.6.1.js"></script>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+    .box1{
+      width: 1000px;
+      height: 600px;
+      border: 1px solid blue;
+      /*box-sizing: border-box;*/
+      margin: 0 auto;
+        background-image: url("./ready/刀妹(1).png");
+        background-position: center;
+        background-size: cover;
+        overflow: hidden;
+    }
+    .box1 li{
+      display: flex;
+      width: 333.333px;
+      height: 200px;
+      border: 1px solid #ccc;
+      /*算上边框宽高各为200px*/
+      box-sizing: border-box;
+      float: left;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+        /*opacity: 0;*/font-size: 30px;
+        font-weight: bold;
+    }
+    .red{
+        background: #1f3144;
+    }
+    #GG{
+    margin: 0 auto;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+
+    }
+  </style>
+</head>
+<body>
+    <h1 id="GG">现在立刻马上去做一件事</h1>
+    <div class="box1">
+      <ul>
+        <li>关机</li>
+        <li>看一部电影</li>
+        <li>变身</li>
+        <li>下蛋</li>
+        <li style="color: #2c0e0e;font-size:60px ">点我哦!</li>
+        <li>闻闻你的脚</li>
+        <li>做三个仰卧起做</li>
+        <li>来一管儿</li>
+        <li>喝口水</li>
+      </ul>
+    </div>
+    <script>
+        let timer;
+        let lis,i;
+        i=0
+        //获取所有的li作为数组返回给lis
+        lis=document.querySelectorAll(".box1 li")
+        // 写一个函数当点击时触发定时器
+        lis[4].onclick=function (){
+            clearInterval(timer);
+        //    点击抽奖的时候刷新文字提醒
+            $("#GG").html("现在立刻马上去做一件事")
+        // 在0-8直接随机生成一个数，当n转够三圈以上并且 i=随机数后停止
+        let stop=+Math.floor(Math.random()*8)
+        //定义一个n代表圈数
+        let n=0;
+        <!--使用js将所有lis再放在一个新数组中-->
+
+        let arr=[lis[0],lis[1],lis[2],lis[5],lis[8],lis[7],lis[6],lis[3]]
+        // console.log(arr.length)
+
+        // 遍历arr
+
+
+            // 写一个定时器
+             timer=setInterval(function(){
+                // 每执行一次n加一次
+                n++
+                // console.log(i);
+                // 移除上一次的效果
+                arr[i].classList.remove("red")
+                // 记录新数组索引
+                i++
+                // 如果i增加到数组最大长度则i归零,这一步时让循环重复
+                if (i>=arr.length){
+                    i=0
+                }
+                // 每执行一次添加一次效果
+                arr[i].classList.add("red")
+                //如果转够三圈以上并且i等于随机中奖数字时结束计时器
+                if (n>50&&i===stop){
+                    // console.log("n="+stop);
+                    clearInterval(timer);
+                    // 将奖项内容赋值给prize
+                    // console.log(arr[i])
+                    let prize=arr[i].innerText;
+                    // console.log(prize)
+                    //提示用户中奖项目
+
+                    $("#GG").html(prize)
+
+                }
+
+            },100)
+        }
+
+
+    </script>
+
+
+</body>
+</html>
